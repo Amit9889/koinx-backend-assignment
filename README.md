@@ -14,7 +14,7 @@ The system collects cryptocurrency statistics periodically and exposes APIs to r
 
 ---
 
-#  Architecture
+# 🏗 Architecture
 
 ```
 Worker Server
@@ -55,7 +55,7 @@ koinx-backend-assignment
 
 ---
 
-#  Tech Stack
+# ⚙️ Tech Stack
 
 * Node.js
 * Express.js
@@ -87,7 +87,7 @@ koinx-backend-assignment
 
 ---
 
-# 🔌 APIs
+#  APIs
 
 ## 1️ Get Latest Stats
 
@@ -121,7 +121,7 @@ http://localhost:5000/api/stats?coin=bitcoin
 
 ---
 
-# 2️⃣ Get Standard Deviation
+# 2️ Get Standard Deviation
 
 ### Endpoint
 
@@ -145,9 +145,9 @@ http://localhost:5000/api/deviation?coin=bitcoin
 
 ---
 
-# 🛠 Setup Instructions
+#  Setup Instructions
 
-## 1️⃣ Clone Repository
+## 1️ Clone Repository
 
 ```
 git clone https://github.com/Amit9889/koinx-backend-assignment.git
@@ -157,7 +157,7 @@ cd koinx-backend-assignment
 
 ---
 
-# 2️⃣ Start NATS Server
+# 2️ Start NATS Server
 
 Using Docker:
 
@@ -167,7 +167,7 @@ docker run -p 4222:4222 nats
 
 ---
 
-# 3️⃣ Setup API Server
+# 3️ Setup API Server
 
 ```
 cd api-server
@@ -194,5 +194,84 @@ node index.js
 Create `.env` file in api-server
 
 ```
-MONGO_URI=mongodb://localhost:27017/
+MONGO_URI=mongodb://localhost:27017/cryptoDB
+PORT=5000
 ```
+
+---
+
+#  Background Job
+
+Worker server runs every:
+
+```
+15 minutes
+```
+
+For testing:
+
+```
+1 minute
+```
+
+---
+
+#  Database Schema
+
+```
+{
+ coin: String,
+ price: Number,
+ marketCap: Number,
+ change24h: Number,
+ createdAt: Date
+}
+```
+
+---
+
+# CoinGecko API Used
+
+```
+https://api.coingecko.com/api/v3/simple/price
+```
+
+---
+
+#  Assignment Requirements Covered
+
+ Two Node Servers
+ MongoDB Integration
+ External API Integration
+ Background Job
+ Event Queue (NATS)
+ Production-level Structure
+
+---
+
+#  Future Improvements
+
+* Deploy API on AWS / Render
+* MongoDB Atlas Deployment
+* Add Authentication
+* Add Logging System
+* Add Unit Testing
+
+---
+
+#  Author
+
+**Amit Sahu**
+
+
+---
+
+#  Notes
+
+This project follows clean architecture and event-driven design principles suitable for production-level backend systems.
+
+---
+
+#  Thank You
+
+Thank you for reviewing this assignment. Looking forward to contributing at KoinX 
