@@ -270,8 +270,3 @@ https://api.coingecko.com/api/v3/simple/price
 
 This project follows clean architecture and event-driven design principles suitable for production-level backend systems.
 
----
-
-#  Thank You
-
-Thank you for reviewing this assignment. Looking forward to contributing at KoinX 
